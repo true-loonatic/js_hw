@@ -23,16 +23,53 @@ extentionEdit(2);
 extentionEdit(0);
 
 //2
-let printSmile = function(m,x){
+// let printSmile = function(m,x){
     
-    for (let s = 0; s <= x-1; s++){
+//     for (let s = 0; s <= x-1; s++){
     
            
-        let n = [m, m+m, m+m+m, m+m+m+m, m+m+m+m+m]
-        console.log(n[s])
+//         let n = [m, m+m, m+m+m, m+m+m+m, m+m+m+m+m]
+//         console.log(n[s])
+// }  
+// }
+
+let printSmile = function(m,x){
+    
+    for (let s = 0; s <= x; s++){
+    
+           
+        let n = m;
+        console.log(n.repeat(s))
 }  
 }
-
 printSmile(":)", 5)
 printSmile("test", 2)
 printSmile("test1", 3)
+
+//3
+
+let z = ['a','e','i','o','u', ];
+let p = ['b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z', ];
+let c = 0;
+let t = 0;
+
+function getWordStructure(w){
+    // w.toUpperCase();
+    for (let v = 0; v <= w.length; v++){
+        w = w.toLowerCase();
+        // for (let q = 0; q <= z.length; q++){
+
+        if (z.indexOf(w[v]) !== -1){
+            c++
+        }
+        if (p.indexOf(w[v]) !== -1){
+            t++
+        }
+        
+    // }
+    }
+    // let c = w.length;
+    console.log(c , t);
+
+};
+getWordStructure('case');
