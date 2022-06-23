@@ -82,19 +82,15 @@ function  isPalindrom(word){
     for (let r = 0; r <= word.length/2; r++){
         
         if (word[r] !== word[word.length - r - 1]){
-            console.log ('not polindrom');
-            // console.log (word.length - r);
-            break;
+            return false;
+       
         }
-        // else{
-        //     console.log ('test +');
-        // };
-        // console.log ('polindrom');
+        return true;
     };
+    // console.log (isPalindrom)  
+}
 
-
-    console.log ('polindrom')
-};
-
-
-isPalindrom ("test")
+isPalindrom ("abba")
+// if (isPalindrom:true){
+//     console.log ("yes")
+// }
