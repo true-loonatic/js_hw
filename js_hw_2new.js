@@ -35,3 +35,4 @@ let printSmile = function(m,x){
 
 printSmile(":)", 5)
 printSmile("test", 2)
+printSmile("test1", 3)

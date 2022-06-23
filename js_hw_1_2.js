@@ -15,3 +15,4 @@ if (age_1 < age_2){
 };
 age (15)
 age (35)
+age (70)
