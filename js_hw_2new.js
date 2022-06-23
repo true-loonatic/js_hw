@@ -72,4 +72,29 @@ function getWordStructure(w){
     console.log(c , t);
 
 };
-getWordStructure('case');
+getWordStructure('Check-List');
+
+// 4
+
+function  isPalindrom(word){
+    word = word.toLowerCase();
+    
+    for (let r = 0; r <= word.length/2; r++){
+        
+        if (word[r] !== word[word.length - r - 1]){
+            console.log ('not polindrom');
+            // console.log (word.length - r);
+            break;
+        }
+        // else{
+        //     console.log ('test +');
+        // };
+        // console.log ('polindrom');
+    };
+
+
+    console.log ('polindrom')
+};
+
+
+isPalindrom ("test")
