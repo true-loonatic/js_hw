@@ -16,22 +16,13 @@ let extentionEdit = function(i){
     
     let n = 2 ** i;
     console.log ("Result = ", n);
-}
+};
 
 extentionEdit(11);
 extentionEdit(2);
 extentionEdit(0);
 
 //2
-// let printSmile = function(m,x){
-    
-//     for (let s = 0; s <= x-1; s++){
-    
-           
-//         let n = [m, m+m, m+m+m, m+m+m+m, m+m+m+m+m]
-//         console.log(n[s])
-// }  
-// }
 
 let printSmile = function(m,x){
     
@@ -39,12 +30,12 @@ let printSmile = function(m,x){
     
            
         let n = m;
-        console.log(n.repeat(s))
-}  
-}
-printSmile(":)", 5)
-printSmile("test", 2)
-printSmile("test1", 3)
+        console.log(n.repeat(s));
+};  
+};
+printSmile(":)", 5);
+printSmile("test", 2);
+printSmile("test1", 3);
 
 //3
 
@@ -54,21 +45,19 @@ let c = 0;
 let t = 0;
 
 function getWordStructure(w){
-    // w.toUpperCase();
+    
     for (let v = 0; v <= w.length; v++){
         w = w.toLowerCase();
-        // for (let q = 0; q <= z.length; q++){
+        
 
         if (z.indexOf(w[v]) !== -1){
-            c++
+            c++;
         }
         if (p.indexOf(w[v]) !== -1){
-            t++
-        }
-        
-    // }
-    }
-    // let c = w.length;
+            t++;
+        };   
+    };
+    
     console.log(c , t);
 
 };
@@ -84,13 +73,11 @@ function  isPalindrom(word){
         if (word[r] !== word[word.length - r - 1]){
             return false;
        
-        }
-        return true;
+        };
+        
     };
-    // console.log (isPalindrom)  
-}
+    return true;
+      
+};
 
-isPalindrom ("abba")
-// if (isPalindrom:true){
-//     console.log ("yes")
-// }
+console.log(isPalindrom ("abba"));
