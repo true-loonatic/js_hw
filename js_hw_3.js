@@ -73,8 +73,10 @@ function getEnterpriseName(name_e){
         for (let j=0; j<enterprises[i].departments.length; j++){
             if (name_e === enterprises[i].id || name_e === enterprises[i].departments[j].id){
                 console.log(enterprises[i].name);
+                break;
             } else if (name_e === enterprises[i].name || name_e === enterprises[i].departments[j].name){
                 console.log(enterprises[i].name);
+                break;
             }
 
         }
@@ -86,6 +88,34 @@ function getEnterpriseName(name_e){
 getEnterpriseName('Отдел аналитики');
 getEnterpriseName('Администрация');
 getEnterpriseName(5);
-getEnterpriseName(7);
+getEnterpriseName(1);
 getEnterpriseName(3);
 
+// class Enterprise {
+    
+//     constractor(id,) {id: Number,
+//                 name: "Предприятие 1",
+//                 departments: String
+//     }
+// }
+
+// let n;
+function addEnterprise(add_name_e){
+    let n;
+    for (let i=0; i<enterprises.length; i++){
+        for (let j=0; j<enterprises[i].departments.length; j++){
+            if (enterprises[i].departments[j].id>enterprises[i].id){
+                n = enterprises[i].departments[j].id;
+            }else {
+                n = enterprises[i].id;
+            }
+            
+        }
+    } 
+    console.log(n)
+    enterprises.push({id: n+1, name: add_name_e, departments: [{id: Number, name: String, employees_count: Number}]})
+    console.log(enterprises)           
+}
+
+addEnterprise("Новое предприятие");
+addEnterprise("Новое предприятие2");
