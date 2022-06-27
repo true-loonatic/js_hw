@@ -112,10 +112,65 @@ function addEnterprise(add_name_e){
             
         }
     } 
-    console.log(n)
+    console.log('last for Ent', n)
     enterprises.push({id: n+1, name: add_name_e, departments: [{id: Number, name: String, employees_count: Number}]})
     console.log(enterprises)           
 }
 
 addEnterprise("Новое предприятие");
 addEnterprise("Новое предприятие2");
+
+function addDepartament(id_enterprise, add_name_d){
+    let n;
+    for (let i=0; i<enterprises.length; i++){
+        if (n<=enterprises[i].id){
+            n = enterprises[i].id;
+            for (let j=0; j<enterprises[i].departments.length; j++){
+                if (enterprises[i].departments[j].id>n){
+                    n = enterprises[i].departments[j].id;
+                }else {
+                    n = enterprises[i].id;
+                }
+                
+            }
+        }else {
+            for (let j=0; j<enterprises[i].departments.length; j++){
+                if (enterprises[i].departments[j].id>n){
+                    n = enterprises[i].departments[j].id;
+                }else {
+                    n = enterprises[i].id;
+                }
+            }
+        } 
+    }
+    console.log('last for dep', n);
+    for (let i=0; i<enterprises.length; i++){
+        if (id_enterprise == enterprises[i].id){
+            enterprises[i].departments.push({id: n+1, name: add_name_d, employees_count: Number})
+        }
+        // console.log(enterprises[i].departments);
+    }
+    console.log(enterprises); 
+    console.log('!dep', n);
+}
+
+addDepartament(11, 'Новый департамент');
+addDepartament(12, 'Новый департамент2');
+
+// function addDepartament_1(id_enterprise_1, add_name_d_1){
+//     let a = enterprises.indexOf(enterprises.id == id_enterprise_1);
+//     enterprises[a].departments.push ({id:Number, name: add_name_d_1, employees_count:Number});
+//     console.log (enterprises[a].departments);
+// }
+// addDepartament_1(12, 'Самый новый')
+
+function editEnterprise (edit_id, new_name_e){
+    for (let i=0; i<enterprises.length; i++){
+        if (enterprises[i].id == edit_id){
+            console.log('cтарое = ', enterprises[i]);
+            enterprises[i].name = new_name_e;
+            console.log('новое = ', enterprises[i]);
+        }
+    }
+}
+editEnterprise (1, 'Новое Предприятие 1');
