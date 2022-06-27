@@ -56,6 +56,8 @@ const enterprises = [
     }
   ]
 
+  console.log('------------------');
+
 
   for (let i=0; i<enterprises.length; i++){
     let summ = 0;
@@ -67,6 +69,8 @@ const enterprises = [
         console.log('-', enterprises[i].departments[j].name, '(', enterprises[i].departments[j].employees_count, 'сотрудников)');
     };
 }
+
+console.log('------------------');
 
 function getEnterpriseName(name_e){
     for (let i=0; i<enterprises.length; i++){
@@ -90,6 +94,8 @@ getEnterpriseName('Администрация');
 getEnterpriseName(5);
 getEnterpriseName(1);
 getEnterpriseName(3);
+
+console.log('------------------');
 
 // class Enterprise {
     
@@ -120,6 +126,8 @@ function addEnterprise(add_name_e){
 addEnterprise("Новое предприятие");
 addEnterprise("Новое предприятие2");
 
+console.log('------------------');
+
 function addDepartament(id_enterprise, add_name_d){
     let n = 0;
     for (let i=0; i<enterprises.length; i++){
@@ -147,6 +155,7 @@ function addDepartament(id_enterprise, add_name_d){
 addDepartament(11, 'Новый департамент');
 addDepartament(12, 'Новый департамент2');
 
+console.log('------------------');
 // function addDepartament_1(id_enterprise_1, add_name_d_1){
 //     let a = enterprises.indexOf(enterprises.id == id_enterprise_1);
 //     enterprises[a].departments.push ({id:Number, name: add_name_d_1, employees_count:Number});
@@ -165,6 +174,24 @@ function editEnterprise (edit_id, new_name_e){
 }
 editEnterprise (1, 'Новое Предприятие 1');
 
+console.log('------------------');
+
 for (let i=0; i<enterprises.length; i++){
     console.log (enterprises[i]);
 }
+
+console.log('------------------');
+
+function editDepartments (edit_id_d, new_name_d){
+    for (let i=0; i<enterprises.length; i++){
+        for (let j=0; j<enterprises[i].departments.length; j++){
+        if (enterprises[i].departments[j].id == edit_id_d){
+            console.log('cтарое = ', enterprises[i].departments[j]);
+            enterprises[i].departments[j].name = new_name_d;
+            console.log('новое = ', enterprises[i].departments[j]);
+        }
+        }
+    }
+}
+
+editDepartments(7, 'Новое название отдела');
