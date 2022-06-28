@@ -55,7 +55,7 @@ const enterprises = [
   ]
 
   console.log('------------------');
-
+// task 3.1
 
   for (let i=0; i<enterprises.length; i++){
     let summ = 0;
@@ -71,7 +71,7 @@ const enterprises = [
 console.log('------------------');
 
 console.log('------------------');
-
+// task 3.2
 function getEnterpriseName(name_e){
    let i = enterprises.findIndex((dept) => dept.departments.find(element => 
     element.id == name_e || element.name == name_e));
@@ -83,6 +83,8 @@ getEnterpriseName('Отдел аналитики');
 getEnterpriseName(6);
 
 console.log('------------------');
+// task 3.3
+
 // function getEnterpriseName_1 (departmentId) {
 //     enterprises.filter(function (item) {item.departments.filter(dept => dept.id == departmentId || dept.name == departmentId).filter(dept => console.log(item.name))
 //     })
@@ -112,10 +114,10 @@ addEnterprise("Новое предприятие");
 addEnterprise("Новое предприятие2");
 
 console.log('------------------');
-
+// task 3.4
 function addDepartament (id_e, add_name_d){
     let i = enterprises.findIndex((element) => element.id == id_e);
-    enterprises[i].departments.push({id: Number, name: add_name_d, employees_count: Number});
+    enterprises[i].departments.push({id: 13, name: add_name_d, employees_count: Number});
     console.log(enterprises[i])
 }
 
@@ -123,9 +125,7 @@ addDepartament(1, 'Новый отдел');
 
 console.log('------------------');
 
-// enterprises.forEach(enterprises.id, function)
-// console.log(enterprises_temp);
-
+// task 3.5
 function editEnterprise (id_e, edited_name_e){
     let i = enterprises.findIndex((element) => element.id == id_e);
     enterprises[i].name = edited_name_e;
@@ -135,7 +135,7 @@ function editEnterprise (id_e, edited_name_e){
 editEnterprise (1, 'Новое предприятие');
 
 console.log('------------------');
-
+// task 3.6
 function editDepartments (id_d, edited_name_d){
     let i = enterprises.findIndex((dept) => dept.departments.find(element => 
         element.id == id_d));
@@ -147,7 +147,7 @@ function editDepartments (id_d, edited_name_d){
 editDepartments (7, 'Новый отдел');
 
 console.log('------------------');
-
+// task 3.7
 function deleteEnterprise (id_e){
     let i = enterprises.findIndex(value_for_index => value_for_index.id == id_e);
     enterprises.splice(i, 1);
@@ -157,15 +157,22 @@ function deleteEnterprise (id_e){
 deleteEnterprise(1);
 
 console.log('------------------');
-
-function deleteDepartments (id_d){
+// task 3.8
+function deleteDepartments (id_d_d){
     let i = enterprises.findIndex((dept) => dept.departments.find(element => 
-        element.id == id_d && element.employees_count > 0));
-    let j = enterprises[i].departments.findIndex(index_d => index_d.id == id_d);
-    delete enterprises[i].departments[j];
-    console.log(enterprises[i].departments);
+        element.id == id_d_d));
+    let j = enterprises[i].departments.findIndex(index_d => index_d.id == id_d_d);
+        
+    if (enterprises[i].departments[j].employees_count == 0){
+            enterprises[i].departments.splice(j,1, '--deleted--');
+        }
+        else {
+            console.log ('not deleted')
+        }
+    
+    console.log(enterprises[i]);
 }
 
-deleteDepartments (7);
+deleteDepartments (6);
 
 console.log('------------------');
