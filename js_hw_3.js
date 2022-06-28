@@ -156,6 +156,7 @@ addDepartament(11, 'Новый департамент');
 addDepartament(12, 'Новый департамент2');
 
 console.log('------------------');
+
 // function addDepartament_1(id_enterprise_1, add_name_d_1){
 //     let a = enterprises.indexOf(enterprises.id == id_enterprise_1);
 //     enterprises[a].departments.push ({id:Number, name: add_name_d_1, employees_count:Number});
